@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-ENV SENSU_VERSION=0.29.0
+ENV SENSU_VERSION=0.29.0-7
 RUN \
   apt-get update &&\
   apt-get install -y curl ca-certificates apt-transport-https build-essential &&\
