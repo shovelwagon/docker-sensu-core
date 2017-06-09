@@ -95,7 +95,7 @@ sed \
     -e "s#HTTPS_PROXY#$HTTPS_PROXY#" \
 /etc/sensu/conf.d/hipchat.json
 
-exec /opt/sensu/bin/sensu-$SENSU_COMPONENT -d /etc/sensu/conf.d,/etc/sensu/check.d,/etc/sensu/handlers -e /etc/sensu/extensions -L warn
+exec /opt/sensu/bin/sensu-$SENSU_COMPONENT -d /etc/sensu/conf.d,/etc/sensu/check.d,/etc/sensu/handlers,/etc/sensu/filters -e /etc/sensu/extensions -L warn
 
 exec "$cmd"
 

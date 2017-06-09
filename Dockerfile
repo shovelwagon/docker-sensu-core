@@ -9,7 +9,7 @@ RUN \
   apt-get update &&\
   apt-get install -y sensu=${SENSU_VERSION} &&\
   sensu-install -P sensu-plugins-sensu,sensu-plugins-mailer,sensu-plugins-hipchat,sensu-plugins-slack
-RUN mkdir -p /etc/sensu/conf.d /etc/sensu/check.d /etc/sensu/handlers /etc/sensu/extensions
+RUN mkdir -p /etc/sensu/conf.d /etc/sensu/check.d /etc/sensu/handlers /etc/sensu/extensions /etc/sensu/filters
 COPY docker-entrypoint.sh /
 RUN chmod 755 /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
