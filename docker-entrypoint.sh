@@ -90,10 +90,36 @@ sed \
     -e "s#SENSU_API_PORT#$SENSU_API_PORT#" \
 /etc/sensu/conf.d/api.json
 
+# start - replacements in this block are optional
+
 sed \
     -i \
     -e "s#HTTPS_PROXY#$HTTPS_PROXY#" \
+    -e "s#HIPCHAT_API_KEY#$HIPCHAT_API_KEY" \
+    -e "s#HIPCHAT_ROOM#$HIPCHAT_ROOM" \
 /etc/sensu/conf.d/hipchat.json
+
+sed \
+    -i \
+    -e "s#INFLUXDB_HOST#$INFLUXDB_HOST#" \
+    -e "s#INFLUXDB_PORT#$INFLUXDB_PORT" \
+    -e "s#INFLUXDB_USERNAME#$INFLUXDB_USERNAME" \
+    -e "s#INFLUXDB_PASSWORD#$INFLUXDB_PASSWORD" \
+    -e "s#INFLUXDB_DATABASE#$INFLUXDB_DATABASE" \
+/etc/sensu/conf.d/influxdb.json
+
+sed \
+    -i \
+    -e "s#AWS_ACCESS_KEY#$AWS_ACCESS_KEY#" \
+    -e "s#AWS_SECRET_KEY#$AWS_SECRET_KEY" \
+/etc/sensu/conf.d/aws_sns_auth.json
+
+sed \
+    -i \
+    -e "s#SLACK_WEBHOOK_URL#$SLACK_WEBHOOK_URL#" \
+/etc/sensu/conf.d/slack.json
+
+# end - replacements in this block are optional
 
 exec /opt/sensu/bin/sensu-$SENSU_COMPONENT -d /etc/sensu/conf.d,/etc/sensu/check.d,/etc/sensu/handlers.d,/etc/sensu/filters.d,/etc/sensu/remediations.d -e /etc/sensu/extensions.d -L warn
 
