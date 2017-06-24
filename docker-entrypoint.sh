@@ -95,23 +95,23 @@ sed \
 sed \
     -i \
     -e "s#HTTPS_PROXY#$HTTPS_PROXY#" \
-    -e "s#HIPCHAT_API_KEY#$HIPCHAT_API_KEY" \
-    -e "s#HIPCHAT_ROOM#$HIPCHAT_ROOM" \
+    -e "s#HIPCHAT_API_KEY#$HIPCHAT_API_KEY#" \
+    -e "s#HIPCHAT_ROOM#$HIPCHAT_ROOM#" \
 /etc/sensu/conf.d/hipchat.json
 
 sed \
     -i \
     -e "s#INFLUXDB_HOST#$INFLUXDB_HOST#" \
-    -e "s#INFLUXDB_PORT#$INFLUXDB_PORT" \
-    -e "s#INFLUXDB_USERNAME#$INFLUXDB_USERNAME" \
-    -e "s#INFLUXDB_PASSWORD#$INFLUXDB_PASSWORD" \
-    -e "s#INFLUXDB_DATABASE#$INFLUXDB_DATABASE" \
+    -e "s#INFLUXDB_PORT#$INFLUXDB_PORT#" \
+    -e "s#INFLUXDB_USERNAME#$INFLUXDB_USERNAME#" \
+    -e "s#INFLUXDB_PASSWORD#$INFLUXDB_PASSWORD#" \
+    -e "s#INFLUXDB_DATABASE#$INFLUXDB_DATABASE#" \
 /etc/sensu/conf.d/influxdb.json
 
 sed \
     -i \
     -e "s#AWS_ACCESS_KEY#$AWS_ACCESS_KEY#" \
-    -e "s#AWS_SECRET_KEY#$AWS_SECRET_KEY" \
+    -e "s#AWS_SECRET_KEY#$AWS_SECRET_KEY#" \
 /etc/sensu/conf.d/aws_sns_auth.json
 
 sed \
